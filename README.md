@@ -83,3 +83,13 @@
 6. EXIT
 
     <img width="526" height="265" alt="image" src="https://github.com/user-attachments/assets/4c32ed37-a4ac-47d1-83f7-348626668894" />
+
+
+<<= Phyton =>>
+
+
+<< Design >>
+
+<< Flowcode >>
+
+<< Dokumentasi >>
