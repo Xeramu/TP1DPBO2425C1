@@ -1,19 +1,45 @@
+//manggil library
 #include <string>
 #include <iostream>
+#include <vector>
 using namespace std;
+
+//manggil file kelas
 #include "TokoElektronik.cpp"
 
 int main(){
 
-    //buat bbrp objek buat demo
-    TokoElektronik s1 = TokoElektronik("Kabel", "001", "5", "15000");
-    TokoElektronik s2 = TokoElektronik("Lampu", "002", "10", "5000");
+    //CREATE bbrp objek
+    //bikin list yang dnimais pake vector buat masukin objek
+    vector<TokoElektronik> daftarBarang;
 
-    //akses atribut nama pake getter
-    cout << "Barang s1: " << s1.getNamabarang() << " | " << s1.getKodebarang() << " | " << s1.getStok()  << " | " << s1.getHarga() << endl;
-    cout << "Barang s2: " << s2.getNamabarang() << " | " << s2.getKodebarang() << " | " << s2.getStok()  << " | " << s2.getHarga() << endl;
+    //masukin objek baru kedalam list
+    daftarBarang.push_back(TokoElektronik("Kabel", "001", 5, 15000));
+    daftarBarang.push_back(TokoElektronik("Lampu", "002", 10, 5000));
+    daftarBarang.push_back(TokoElektronik("Kulkas", "003", 3, 5000000));
+    daftarBarang.push_back(TokoElektronik("Mesin Cuci", "004", 2, 1200000));
 
-    s1.setNamabarang("Stop Kontak");
-    cout << "Barang s1 setelah setNamabarang: " << s1.getNamabarang() << " | " << s1.getKodebarang() << " | " << s1.getStok()  << " | " << s1.getHarga() << endl;
+    //READ isi atribut pake getter
+    cout << "== Daftar Barang Toko Elektronik el Angjay == " << endl;
+    for (int i = 0; i < daftarBarang.size(); i++) {
+        cout << "Barang ke-" << i+1 << ": " << daftarBarang[i].getNamabarang() << " | " << daftarBarang[i].getKodebarang() << " | " << daftarBarang[i].getStok() << " | " << daftarBarang[i].getHarga() << endl;
+    }
+    cout << "\n";
+
+    //UPDATE isi atribut menggunakan setter
+    daftarBarang[1].setNamabarang("Stop Kontak");
+    cout << "== Setelah UPDATE ==" << endl;
+    for (int i = 0; i < daftarBarang.size(); i++) {
+        cout << "Barang ke-" << i+1 << ": " << daftarBarang[i].getNamabarang() << " | " << daftarBarang[i].getKodebarang() << " | " << daftarBarang[i].getStok() << " | " << daftarBarang[i].getHarga() << endl;
+    }
+    cout << "\n";
+
+    //DELETE isi atribut
+    daftarBarang.erase(daftarBarang.begin() + 3);
+    cout << "== Setelah DELETE ==" << endl;
+    for (int i = 0; i < daftarBarang.size(); i++) {
+        cout << "Barang ke-" << i+1 << ": " << daftarBarang[i].getNamabarang() << " | " << daftarBarang[i].getKodebarang() << " | " << daftarBarang[i].getStok() << " | " << daftarBarang[i].getHarga() << endl;
+    }
+
     return 0;
 }
