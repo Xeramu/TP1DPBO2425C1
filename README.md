@@ -1,7 +1,7 @@
 << Saya, Umarex Shauma Andromeda, dengan NIM 2400598, mengerjakan TP1 dalam mata kuliah Desain dan Pemrograman Berorientasi Objek. Untuk keberkahan-Nya, maka saya tidak akan melakukan kecurangan seperti yang telah dispesifikasi >>
 
 
-CPP
+<<= CPP =>>
 
 << Design >>
   1. Class TokoElektronik
@@ -83,3 +83,13 @@ CPP
 6. EXIT
 
     <img width="526" height="265" alt="image" src="https://github.com/user-attachments/assets/4c32ed37-a4ac-47d1-83f7-348626668894" />
+
+
+<<= Phyton =>>
+
+
+<< Design >>
+
+<< Flowcode >>
+
+<< Dokumentasi >>
