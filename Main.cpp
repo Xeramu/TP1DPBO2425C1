@@ -10,9 +10,8 @@ using namespace std;
 int main(){
 
     //CREATE bbrp objek
-    //bikin list yang dnimais pake vector buat masukin objek
+    //bikin list yang dnimais pake vector
     vector<TokoElektronik> daftarBarang;
-
     //masukin objek baru kedalam list
     daftarBarang.push_back(TokoElektronik("Kabel", "001", 5, 15000));
     daftarBarang.push_back(TokoElektronik("Lampu", "002", 10, 5000));
@@ -21,23 +20,28 @@ int main(){
 
     //READ isi atribut pake getter
     cout << "== Daftar Barang Toko Elektronik el Angjay == " << endl;
-    for (int i = 0; i < daftarBarang.size(); i++) {
+    //for looping smua barang yg ada dlm vector dari pertama sampai akhir trus ditampilin pake getter
+    for(int i = 0; i < daftarBarang.size(); i++){
         cout << "Barang ke-" << i+1 << ": " << daftarBarang[i].getNamabarang() << " | " << daftarBarang[i].getKodebarang() << " | " << daftarBarang[i].getStok() << " | " << daftarBarang[i].getHarga() << endl;
     }
     cout << "\n";
 
     //UPDATE isi atribut menggunakan setter
+    //ganti nama barang yang di elemen ke 2 pake setter
     daftarBarang[1].setNamabarang("Stop Kontak");
     cout << "== Setelah UPDATE ==" << endl;
-    for (int i = 0; i < daftarBarang.size(); i++) {
+    //for looping smua barang yg ada dlm vector dari pertama sampai akhir trus ditampilin pake getter
+    for(int i = 0; i < daftarBarang.size(); i++){
         cout << "Barang ke-" << i+1 << ": " << daftarBarang[i].getNamabarang() << " | " << daftarBarang[i].getKodebarang() << " | " << daftarBarang[i].getStok() << " | " << daftarBarang[i].getHarga() << endl;
     }
     cout << "\n";
 
     //DELETE isi atribut
+    //nunjuk elemen ke 1 dr dafterbarang trus maju 3 langkah jd ke elemen ke 4, trus apus pake erase
     daftarBarang.erase(daftarBarang.begin() + 3);
     cout << "== Setelah DELETE ==" << endl;
-    for (int i = 0; i < daftarBarang.size(); i++) {
+    //for looping smua barang yg ada dlm vector dari pertama sampai akhir trus ditampilin pake getter
+    for(int i = 0; i < daftarBarang.size(); i++){
         cout << "Barang ke-" << i+1 << ": " << daftarBarang[i].getNamabarang() << " | " << daftarBarang[i].getKodebarang() << " | " << daftarBarang[i].getStok() << " | " << daftarBarang[i].getHarga() << endl;
     }
 
