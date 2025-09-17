@@ -90,10 +90,83 @@
 
 << Design >>
 
+1. Class TokoElektronik
+   Atribut(private):
+   - Nama Barang
+   - Kode Barang
+   - Stok Barang
+   - Harga Barang
+
+   Method(public):
+   - getter
+   - setter
+     
+3. Main
+   - loop while true
+   - CREATE
+   - READ
+   - UPDATE
+   - DELET
+   - SEARCH
+   - EXIT
+     
 << Flowcode >>
+1. while true jalan, user diminta input pilihan. Klo bukan 6, kode ttp jalan
 
+2. Pilihan 1 (CREATE)
+   - user masukin data baru
+   - objek dibikin trus dimasukin kelist
+   - print pesan berhasil
+     
+3. Pilihan 2 (READ)
+   - kalau list kosong, print error
+   - klo list ada, print isi list pake for look
+     
+4. Pilihan 3 (UPDATE)
+   - user input kode barang yg mau duupdate
+   - program nyari index barang dilist
+   - klo nemu, user input bisa lgsng input update pake setter
+   - klo engga nemu, print pesan error
+     
+5. Pilihan 4 (DELETE)
+   - user input kode barang yg mau diapus
+   - program nyari index barang dilist
+   - klo nemu, barang lgsng diapus
+   - klo engga nemu, print pesan error
+     
+6. Pilihan 5 (SEARCH)
+   - user input kode barang yg mau dicari
+   - program nyari index barang dilist
+   - klo nemu, barang ditampilin
+   - klo engga nemu, print pesan error
+     
+7. Pilihan 6 (EXIT)
+    - print pesan dadah, trus kluar program pake break
+      
 << Dokumentasi >>
+1. CREATE
 
+   <img width="514" height="510" alt="image" src="https://github.com/user-attachments/assets/5beea519-7d66-47b9-af52-f8cc421b23f8" />
+
+2. READ
+
+   <img width="520" height="122" alt="image" src="https://github.com/user-attachments/assets/2ebcc36e-fea4-414e-b174-6cfaf66f24a0" />
+
+4. UPDATE
+
+   <img width="517" height="507" alt="image" src="https://github.com/user-attachments/assets/98a20bca-8ecf-479b-9190-ddc8a1edeb6d" />
+
+6. DELETE
+
+   <img width="513" height="405" alt="image" src="https://github.com/user-attachments/assets/cbbf0cba-8aaf-4e9f-b6ce-c760063b90a7" />
+
+8. SEARCH
+
+   <img width="455" height="295" alt="image" src="https://github.com/user-attachments/assets/6e0c3951-e026-403f-93da-e1b9e5d8212d" />
+
+10. EXIT
+
+    <img width="263" height="242" alt="image" src="https://github.com/user-attachments/assets/95083082-bf08-4bb8-ab35-f5ade5036b5c" />
 
 <<= Java =>>
 
