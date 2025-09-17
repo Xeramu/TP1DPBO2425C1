@@ -172,11 +172,86 @@
 
 
 << Design >>
+  1. Class TokoElektronik
+     Atribut (private):
+     - Nama Barang
+     - Kode Barang
+     - Stok Barang
+     - Harga Barang
+  
+     Method (public):
+     - constructor
+     - getter
+     - setter
+       
+  2. Main
+     - Fungsi yg nyari index
+     - Arraylist
+     - Create
+     - Read
+     - Update
+     - Delete
+     - Search
 
 << Flowcode >>
+1. Melakukan perulangan do while, minta input user pilihan 1-6. Selama bkn 6, loop terus jalans
+     
+  2. Pilihan 1 (CREATE)
+     - User diminta input nama, kode, stok, harag
+     - Barang baru dibuat lalu di masukan kedalam list
+     - Print pesan berhasil
+    
+  3. Pilihan 2 (READ)
+     - for loop smua barang yang ada dalem vector
+     - print isinya
+  
+  4. Pilihan 3 (UPDATE)
+     - user dimanta input kode yg mau dupdate
+     - cek dlu kodenya ada engga pake fungsi nyari index
+     - klo ada, user masukin kode yg mau diupdate
+     - klo engga nemu, print pesan error dan balik ke loop do while
+  
+  5. Pilihan 4 (DELETE)
+     - user masukin kode barang yang mau diapus
+     - nyari kode pake fungsi
+     - klo nemu, barang yg ada kodenya diapus
+     - klo engga, print pesan error dan balik ke loop do while
+       
+  6. Pilihan 5 (SEARCH)
+      - user masukin kode yang mau dicari
+      - nyari kode pake fungsi
+      - klo nemu, print barang dengan kode yg matching
+      - klo engga, print pesan error dan balik ke loop do while
+        
+  7. Pilihan 6 (EXIT)
+      - print pesan dadah
+      - exit program
 
 << Dokumentasi >>
 
+1. CREATE
+
+   <img width="431" height="708" alt="image" src="https://github.com/user-attachments/assets/253a3f1b-cf65-4d77-89f2-131c44e7a503" />
+
+2. READ
+
+   <img width="512" height="322" alt="image" src="https://github.com/user-attachments/assets/6079a7ff-d839-4207-bd12-cb9c927112bf" />
+
+3. UPDATE
+
+   <img width="513" height="679" alt="image" src="https://github.com/user-attachments/assets/b1d6252d-154f-4d7a-9d5f-6ca154656080" />
+
+4. DELETE
+
+   <img width="518" height="578" alt="image" src="https://github.com/user-attachments/assets/baba0334-5589-4c60-85e2-263317a086a5" />
+
+6. SEARCH
+
+   <img width="465" height="260" alt="image" src="https://github.com/user-attachments/assets/f5ce5058-43a9-4a50-986e-f3d4b93ba191" />
+
+7. EXIT
+
+   <img width="413" height="238" alt="image" src="https://github.com/user-attachments/assets/05298ad3-545b-4311-b970-d0f7792a8551" />
 
 <<= PHP =>>
 
