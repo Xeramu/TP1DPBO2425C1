@@ -255,9 +255,69 @@
 
 <<= PHP =>>
 
-
 << Design >>
+1. Class TokoElektronik
+   Atribut (private):
+   - nama barang
+   - kode barang
+   - stok
+   - harga
+
+  Method (public)
+  - Constructor
+  - gwtter
+  - setter
+    
+2. Main
+   - list of objet
+   - create
+   - read
+   - update
+   - delete
 
 << Flowcode >>
+1. Index.php
+   - session dimulai
+   - cek apakah daftar barang udh ada. klo blm, bikin array kosong
+   - nampilin form input barang
+   - nampilin tabel barang yang sudah ada
+     
+3. CREATE
+   - user isi data. nama, kode, stok, harga, gamar
+   - file gambar disimpen ke file lokak
+   - objek dr input dibuat
+   - objek dimasukkan ke session
+   - halaman reload, tabel bertambah
+   
+4. READ
+   - ngeggunain foreach untuk loop semua barang di session
+   - nampilin di tabel
+     
+6. UPDATE
+   - user klik tombol edit
+   - form otomatis terisi data lama
+   - user bisa ganti nama, kode, stok, harga, gambar
+   - setelah user klik tombol update, barang lama di array session diganti pake objek baru
+     
+7. DELETE
+   - user klik tombol hapus
+   - barang dihapus dr session pake unset
+   - array di re-index biar rapih
 
 << Dokumentasi >>
+
+1. CREATE
+
+  <img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/b2f1f950-52ab-48c3-a8d1-1d68f3a21547" />
+  
+2. READ
+
+   <img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/b2f1f950-52ab-48c3-a8d1-1d68f3a21547" />
+
+3. UPDATE
+
+  <img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/3af53b5d-c5ad-40a6-a447-816879b6e812" />
+
+4. DELETE
+
+   <img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/ca8871a9-612b-4ae6-8e6d-36a2d19b1c57" />
