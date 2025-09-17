@@ -1,35 +1,44 @@
 <?php
+//import kelas TokoElektronik.php
 require_once __DIR__ . '/TokoElektronik.php';
+
+//mulai session
 session_start();
 
-// inisialisasi daftarBarang di session
+//inisialisasi array alias daftar barang di session
+//klo daftar barang blm ada di session, buat array kosong
 if (!isset($_SESSION['daftarBarang'])) {
     $_SESSION['daftarBarang'] = [];
 }
 
-// CREATE
+//CREATE
+//cek dlu tombol tambah udh dipencet blm
 if (isset($_POST['tambah'])) {
+    //ambil input dari form
     $nama = $_POST['nama'];
     $kode = $_POST['kode'];
-    $stok = intval($_POST['stok']);
-    $harga = intval($_POST['harga']);
-    $gambar = "img/" . $_FILES['gambar']['name'];
+    $stok = intval($_POST['stok']);//ngubah string ke int
+    $harga = intval($_POST['harga']);//ngubah string ke int
+    $gambar = "img/" . $_FILES['gambar']['name'];//path file gamar lokal
 
+    //simpen file gambar ke folder img
     move_uploaded_file($_FILES['gambar']['tmp_name'], $gambar);
 
+    //masuk ke array session
     $barang = new TokoElektronik($nama, $kode, $stok, $harga, $gambar);
     $_SESSION['daftarBarang'][] = $barang;
 }
 
-// DELETE
+//DELETE
+//cek apakah ada parameter hapus di url
 if (isset($_GET['hapus'])) {
-    $idx = intval($_GET['hapus']);
-    unset($_SESSION['daftarBarang'][$idx]);
+    $idx = intval($_GET['hapus']);//ambil index barang yang mau dihapus
+    unset($_SESSION['daftarBarang'][$idx]);//hapus elemen array
     $_SESSION['daftarBarang'] = array_values($_SESSION['daftarBarang']); // reindex array
 }
 
-// UPDATE - tampilkan form edit
-$editMode = false;
+//UPDATE (nampilin form buat edit)
+$editMode = false;//default bkn mode edit
 $editIndex = -1;
 $editBarang = null;
 
@@ -41,23 +50,28 @@ if (isset($_GET['edit'])) {
     }
 }
 
-// UPDATE - simpan perubahan
+//UPDATE (buat nmpen perubahan)
 if (isset($_POST['update'])) {
-    $idx = intval($_POST['index']);
+    $idx = intval($_POST['index']);//ambil index dari form hidden input
     if (isset($_SESSION['daftarBarang'][$idx])) {
+        
+        //ambil data baru dari form
         $nama = $_POST['nama'];
         $kode = $_POST['kode'];
         $stok = intval($_POST['stok']);
         $harga = intval($_POST['harga']);
-        $gambar = $_SESSION['daftarBarang'][$idx]->getGambar(); // default gambar lama
+        $gambar = $_SESSION['daftarBarang'][$idx]->getGambar();//default = gambar lama
 
+        //kalau user upload gambar baru -> ganti gambarnya
         if (!empty($_FILES['gambar']['name'])) {
             $gambar = "img/" . $_FILES['gambar']['name'];
             move_uploaded_file($_FILES['gambar']['tmp_name'], $gambar);
         }
 
+        //ganti objek lama pake objek baru
         $_SESSION['daftarBarang'][$idx] = new TokoElektronik($nama, $kode, $stok, $harga, $gambar);
     }
+    //abis update, balik ke index.php
     header("Location: index.php");
     exit();
 }
