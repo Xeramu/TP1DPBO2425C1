@@ -90,7 +90,7 @@ if (isset($_POST['update'])) {
 </head>
 <body>
 
-<h2 style="text-align:center;">Toko Elektronik - CRUD PHP (Session)</h2>
+<h2 style="text-align:center;">== Toko Elektronik el Angjay ==</h2>
 
 <!-- Form Input -->
 <form method="POST" enctype="multipart/form-data">
