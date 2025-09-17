@@ -138,7 +138,7 @@ public class Main {
 
         } while (pilihan != 6);
         //klo input user 6, print pesan, trus kluar program
-        System.out.println("Keluar dari program. Terima kasih!");
+        System.out.println("Bye bye. maacih :P");
         sc.close();
     }
 }
