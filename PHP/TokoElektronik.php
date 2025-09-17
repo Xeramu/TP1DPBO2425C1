@@ -1,62 +1,32 @@
 <?php
+class TokoElektronik {
 
-class TokoElektronik{
-
-    //atribut private
     private string $namabarang;
     private string $kodebarang;
     private int $stok;
     private int $harga;
+    private string $gambar; // path file gambar lokal
 
-    //contrsctor untuk inisiai atribut awal
-    public function __construct(string $namabarang, string $kodebarang, int $stok, int $harga) {
+    public function __construct(string $namabarang, string $kodebarang, int $stok, int $harga, string $gambar) {
         $this->namabarang = $namabarang;
         $this->kodebarang = $kodebarang;
         $this->setStok($stok);
         $this->setHarga($harga);
+        $this->gambar = $gambar;
     }
 
-    //getter & setter nama barang
-    public function getNamabarang(): string {
-        return $this->namabarang;
-    }
+    public function getNamabarang(): string { return $this->namabarang; }
+    public function setNamabarang(string $namabarang): void { $this->namabarang = $namabarang; }
 
-    public function setNamabarang(string $namabarang): void {
-        $this->namabarang = $namabarang;
-    }
+    public function getKodebarang(): string { return $this->kodebarang; }
+    public function setKodebarang(string $kodebarang): void { $this->kodebarang = $kodebarang; }
 
-    //getter & setter kode barang
-    public function getKodebarang(): string {
-        return $this->kodebarang;
-    }
+    public function getStok(): int { return $this->stok; }
+    public function setStok(int $stok): void { $this->stok = ($stok < 0) ? 0 : $stok; }
 
-    public function setKodebarang(string $kodebarang): void {
-        $this->kodebarang = $kodebarang;
-    }
+    public function getHarga(): int { return $this->harga; }
+    public function setHarga(int $harga): void { $this->harga = ($harga < 0) ? 0 : $harga; }
 
-    //getter & setter stok
-    public function getStok(): int {
-        return $this->stok;
-    }
-
-    public function setStok(int $stok): void {
-        if ($stok < 0) {
-            $this->stok = 0; // biar stok ga minus
-        } else {
-            $this->stok = $stok;
-        }
-    }
-
-    //getter & setter harga
-    public function getHarga(): int {
-        return $this->harga;
-    }
-
-    public function setHarga(int $harga): void {
-        if ($harga < 0) {
-            $this->harga = 0; // biar harga ga minus
-        } else {
-            $this->harga = $harga;
-        }
-    }
+    public function getGambar(): string { return $this->gambar; }
+    public function setGambar(string $gambar): void { $this->gambar = $gambar; }
 }
